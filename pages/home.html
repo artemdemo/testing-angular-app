@@ -1,0 +1,33 @@
+<div class="container" ng-controller="homeCtrl">
+
+    <h2>{{ title }}</h2>
+    
+    <p>
+        <h3>Statistic</h3>
+        Total balance: {{ totalBalance | currency }}
+    </p>
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Company</th>
+                <th>Balance</th>
+                <th>Phone</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="person in people track by person._id">
+                <th scope="row">{{ $index + 1 }}</th>
+                <td>{{ person.name }}</td>
+                <td>{{ person.company }}</td>
+                <td>{{ person.balance }}</td>
+                <td>{{ person.phone }}</td>
+                <td>{{ person.email }}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+</div>
